@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "titulo": "Dom Quixote",
+    "autor": "Miguel de Cervantes",
+    "favorito": true,
+    "estrelas": 2
+  },
+  {
+    "id": 2,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "favorito": false,
+    "estrelas": 4
+  },
+  {
+    "id": 3,
+    "titulo": "O Grande Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "favorito": true,
+    "estrelas": 5
+  },
+  {
+    "id": 4,
+    "titulo": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "favorito": false,
+    "estrelas": 1
+  },
+  {
+    "id": 5,
+    "titulo": "Moby Dick",
+    "autor": "Herman Melville",
+    "favorito": false,
+    "estrelas": 3
+  },
+  {
+    "id": 6,
+    "titulo": "Guerra e Paz",
+    "autor": "Liev Tolstói",
+    "favorito": true,
+    "estrelas": 4
+  },
+  {
+    "id": 7,
+    "titulo": "O Senhor dos Anéis",
+    "autor": "J.R.R. Tolkien",
+    "favorito": true,
+    "estrelas": 5
+  },
+  {
+    "id": 8,
+    "titulo": "O Apanhador no Campo de Centeio",
+    "autor": "J.D. Salinger",
+    "favorito": false,
+    "estrelas": 4
+  },
+  {
+    "id": 9,
+    "titulo": "Orgulho e Preconceito",
+    "autor": "Jane Austen",
+    "favorito": true,
+    "estrelas": 3
+  },
+  {
+    "id": 10,
+    "titulo": "O Sol é Para Todos",
+    "autor": "Harper Lee",
+    "favorito": false,
+    "estrelas": 4
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nome": "Gabriel García Márquez",
+    "nacionalidade": "Colombiana"
+  },
+  {
+    "id": 2,
+    "nome": "Jane Austen",
+    "nacionalidade": "Britânica"
+  },
+  {
+    "id": 3,
+    "nome": "Haruki Murakami",
+    "nacionalidade": "Japonesa"
+  },
+  {
+    "id": 4,
+    "nome": "Chimamanda Ngozi Adichie",
+    "nacionalidade": "Nigeriana"
+  },
+  {
+    "id": 5,
+    "nome": "Fyodor Dostoevsky",
+    "nacionalidade": "Russa"
+  },
+  {
+    "id": 6,
+    "nome": "Isabel Allende",
+    "nacionalidade": "Chilena"
+  },
+  {
+    "id": 7,
+    "nome": "Mark Twain",
+    "nacionalidade": "Americana"
+  },
+  {
+    "id": 8,
+    "nome": "J.K. Rowling",
+    "nacionalidade": "Britânica"
+  },
+  {
+    "id": 9,
+    "nome": "Leo Tolstoy",
+    "nacionalidade": "Russa"
+  },
+  {
+    "id": 10,
+    "nome": "Maya Angelou",
+    "nacionalidade": "Americana"
+  }
+]

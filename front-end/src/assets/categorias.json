@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nome": "Ficção Científica",
+    "descricao": "Livros que exploram temas relacionados à ciência e tecnologia futurista, espaço, e mundos alternativos."
+  },
+  {
+    "id": 2,
+    "nome": "Fantasia",
+    "descricao": "Histórias que se passam em mundos imaginários com elementos mágicos e criaturas sobrenaturais."
+  },
+  {
+    "id": 3,
+    "nome": "Romance",
+    "descricao": "Narrativas focadas em relacionamentos amorosos e emocionais entre os personagens."
+  },
+  {
+    "id": 4,
+    "nome": "Biografia",
+    "descricao": "Relatos detalhados sobre a vida de uma pessoa real, geralmente de figura pública ou histórica."
+  },
+  {
+    "id": 5,
+    "nome": "Mistério",
+    "descricao": "Livros que envolvem a resolução de um crime ou um enigma, mantendo o suspense até o final."
+  },
+  {
+    "id": 6,
+    "nome": "Autoajuda",
+    "descricao": "Livros que oferecem conselhos e estratégias para melhorar aspectos da vida pessoal e profissional."
+  },
+  {
+    "id": 7,
+    "nome": "História",
+    "descricao": "Livros que exploram eventos históricos, analisando contextos sociais, políticos e culturais."
+  },
+  {
+    "id": 8,
+    "nome": "Terror",
+    "descricao": "Histórias que visam causar medo e tensão, frequentemente envolvendo o sobrenatural ou o macabro."
+  },
+  {
+    "id": 9,
+    "nome": "Aventura",
+    "descricao": "Narrativas que envolvem personagens em jornadas emocionantes e desafios inesperados."
+  },
+  {
+    "id": 10,
+    "nome": "Poesia",
+    "descricao": "Coletâneas de poemas, explorando temas variados através de versos e rimas."
+  }
+]
