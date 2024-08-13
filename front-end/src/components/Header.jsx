@@ -52,7 +52,7 @@ function Header() {
       <Logo>
         <NavLink to="/">
           <img src={logo} alt="Logo"/>
-          <span>Companhia das <strong>Letras</strong></span>
+          <span>livraria <strong>Pica das Galáxias</strong></span>
         </NavLink>
       </Logo>
       <Navegacao>
