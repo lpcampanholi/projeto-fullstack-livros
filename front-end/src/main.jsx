@@ -8,6 +8,7 @@ import GlobalStyle from './components/GlobalStyle.jsx';
 import Livros from './pages/Livros.jsx';
 import Categorias from './pages/Categorias.jsx';
 import Autores from './pages/Autores.jsx';
+import Favoritos from './pages/Favoritos.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/livros" element={<Livros />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/autores" element={<Autores />} />
+        <Route path="/favoritos" element={<Favoritos />} />
       </Routes>
       <Footer />
     </BrowserRouter>

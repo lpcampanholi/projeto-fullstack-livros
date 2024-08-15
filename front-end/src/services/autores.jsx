@@ -7,7 +7,7 @@ async function getAutores() {
   return res.data;
 };
 
-async function createAutor(autor) {
+async function postAutor(autor) {
   const res = await api.post("/", autor);
   return res.data;
 };
@@ -17,4 +17,4 @@ async function deleteAutor(id) {
   return res.data;
 };
 
-export { getAutores, createAutor, deleteAutor };
+export { getAutores, postAutor, deleteAutor };

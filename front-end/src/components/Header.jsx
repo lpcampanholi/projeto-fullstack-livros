@@ -38,7 +38,7 @@ const Navegacao = styled.nav`
   }
 
   a.active {
-    border-bottom-color: #bfdae9;
+    border-bottom-color: #90d4ff;
   }
 
   a:hover {

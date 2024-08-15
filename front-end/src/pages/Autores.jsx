@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import imgAutor from "../assets/autor.png";
 import { useEffect, useState } from "react";
-import { getAutores, createAutor, deleteAutor } from "../services/autores";
+import { getAutores, postAutor, deleteAutor } from "../services/autores";
 import { CiCircleRemove } from "react-icons/ci";
 import { CiEdit } from "react-icons/ci";
 
@@ -76,9 +76,7 @@ const FormAutor = styled.section`
   button:hover {
     background-color: #56bbfa;
   }
-
 `;
-
 
 function Autores() {
 
@@ -98,7 +96,7 @@ function Autores() {
 
   async function cadastrarAutor() {
     const novoAutor = { nome, nacionalidade };
-    await createAutor(novoAutor);
+    await postAutor(novoAutor);
     fetchAutores();
   };
 
