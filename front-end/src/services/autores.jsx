@@ -17,4 +17,8 @@ async function deleteAutor(id) {
   return res.data;
 };
 
-export { getAutores, postAutor, deleteAutor };
+export {
+  getAutores,
+  postAutor,
+  deleteAutor
+};

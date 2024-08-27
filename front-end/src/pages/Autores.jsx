@@ -15,7 +15,7 @@ const Autor = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  margin: 10px 20%;
+  margin: 10px 30%;
   padding: 0.5em 2em;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   color: #666;

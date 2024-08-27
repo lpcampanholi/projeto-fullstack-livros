@@ -13,7 +13,18 @@ async function getLivroPorId(id) {
 };
 
 async function postLivro(livro) {
-  const res = await api.post("/", livro);
+  const keysFromLivros = Object.keys(livro)
+  const formData = new FormData();
+  keysFromLivros.forEach(key => {
+    formData.append(key, livro[key])
+  })
+  // formData.set("nome", livro.nome)
+  // formData.set("imagem", livro.imagem)
+  const res = await api.post("/", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
+  });
   return res.data;
 };
 

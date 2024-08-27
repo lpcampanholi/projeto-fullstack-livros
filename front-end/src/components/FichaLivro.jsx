@@ -5,13 +5,15 @@ import { getLivroPorId, postLivro, putLivro } from "../services/livros";
 import Botao from "./Botao";
 import capa from "../assets/livro.png";
 import { IoClose } from "react-icons/io5";
+import Campo from "./Campo";
+import ListaSuspensa from "./ListaSuspensa";
+import { getCategorias } from "../services/categorias";
 
 const Fundo = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -22,9 +24,10 @@ const Fundo = styled.section`
 const Content = styled.div`
   background-color: #f1e3c1;
   border-radius: 1em;
-  width: 60%;
+  max-width: 60%;
   position: relative;
   padding: 2em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
   form {
     display: flex;
@@ -47,37 +50,25 @@ const Content = styled.div`
     align-items: center;
     gap: 1em;
   }
-`;
 
-const Campo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
-
-  input, select {
-    padding: 0.5em;
-    border-radius: 0.5em;
-    border: 1px solid #333;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  &
-  input:focus {
-    outline: none;
-    border-bottom: 2px solid blue; 
+  .inferior {
+    display: flex;
+    gap: 1em;
   }
 `;
 
 function FichaLivro({ id, fechar, atualizarLivros }) {
 
   const [autores, setAutores] = useState([]);
+  const [categorias, setCategorias] = useState([]);
   const [livro, setLivro] = useState({
     titulo: "",
     editora: "",
     autor: "",
-    paginas: ""
+    categoria: "",
+    paginas: 0,
+    estrelas: 0,
+    imagem: null
   });
 
   useEffect(() => {
@@ -85,6 +76,7 @@ function FichaLivro({ id, fechar, atualizarLivros }) {
       fetchLivro(id);
     };
     fetchAutores();
+    fetchCategorias();
   }, [id]);
 
   // Buscar Livro
@@ -99,13 +91,19 @@ function FichaLivro({ id, fechar, atualizarLivros }) {
     setAutores(autoresDaApi);
   };
 
-  // Atualizar objeto Livro nos campos
+  // Buscar Categorias
+  async function fetchCategorias() {
+    const categoriasApi = await getCategorias();
+    setCategorias(categoriasApi);
+  };
+
+  // Atualizar Campos
   function atualizarCampo(e) {
     setLivro({
       ...livro,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   // Atualizar / Criar Livro na API
   async function atualizarLivro(livro) {
@@ -113,12 +111,13 @@ function FichaLivro({ id, fechar, atualizarLivros }) {
       await putLivro(id, livro);
     } else {
       await postLivro(livro);
-    }
+    };
   };
 
   // Submeter formulário
   async function submeterForm(e) {
     e.preventDefault();
+    console.log(livro);
     await atualizarLivro(livro);
     await atualizarLivros();
     fechar();
@@ -131,66 +130,52 @@ function FichaLivro({ id, fechar, atualizarLivros }) {
         <div className="container">
           <img src={capa} alt="capa" />
           <form onSubmit={submeterForm}>
-            <Campo>
-              <label htmlFor="titulo">Título</label>
-              <input
-                type="text"
-                name="titulo"
-                id="titulo"
-                placeholder="Título do livro"
-                value={livro.titulo}
-                onChange={atualizarCampo}
+            <Campo
+              nome="titulo"
+              rotulo="Título"
+              placeholder="Digite o título"
+              aoAtualizar={atualizarCampo}
+              valor={livro.titulo}
               />
-            </Campo>
-            <Campo>
-              <label htmlFor="editora">Editora</label>
-              <input
-                type="text"
-                name="editora"
-                id="editora"
-                placeholder="Editora do livro"
-                value={livro.editora}
-                onChange={atualizarCampo}
+            <Campo
+              nome="editora"
+              rotulo="Editora"
+              placeholder="Digite a Editora"
+              aoAtualizar={atualizarCampo}
+              valor={livro.editora}
+            />
+            <ListaSuspensa
+            nome="autor"
+            rotulo="Autor"
+            lista={autores}
+            aoAtualizar={atualizarCampo}
+            valor={livro.autor.nome}
+            />
+            <ListaSuspensa
+            nome="categoria"
+            rotulo="Categoria"
+            lista={categorias}
+            aoAtualizar={atualizarCampo}
+            valor={livro.categoria.nome}
+            />
+            <div className="inferior">
+            <Campo
+                nome="paginas"
+                rotulo="Páginas"
+                placeholder="Quantidade de páginas"
+                aoAtualizar={atualizarCampo}
+                valor={livro.paginas}
+                tipo="number"
               />
-            </Campo>
-            <Campo>
-              <label htmlFor="autor">Autor</label>
-              <select
-                name="autor"
-                id="autor"
-                value={livro.autor.nome}
-                onChange={atualizarCampo}
-              >
-                <option>Selecione o autor</option>
-                {autores.map((autor) => (
-                  <option key={autor._id} value={autor._id}>
-                    {autor.nome}
-                  </option>
-                ))}
-              </select>
-            </Campo>
-            <Campo>
-              <label htmlFor="paginas">Páginas</label>
-              <input
-                type="number"
-                name="paginas"
-                id="paginas"
-                placeholder="Páginas"
-                value={livro.paginas}
-                onChange={atualizarCampo}
+              <Campo
+                nome="estrelas"
+                rotulo="Estrelas"
+                placeholder="Quantidade de estrelas"
+                aoAtualizar={atualizarCampo}
+                valor={livro.estrelas}
+                tipo="number"
               />
-            </Campo>
-            <Campo>
-              <label htmlFor="estrelas">Estrelas</label>
-              <input
-                type="number"
-                name="estrelas"
-                id="estrelas"
-                placeholder="Estrelas (1 a 5)"
-                value={livro.estrelas}
-                onChange={atualizarCampo}
-              />
-            </Campo>
+            </div>
             <Botao>Salvar</Botao>
           </form>
         </div>

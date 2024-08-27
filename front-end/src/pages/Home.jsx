@@ -1,15 +1,23 @@
 import styled from "styled-components";
+import LivrosDestaque from "../components/LivrosDestaque";
+import Titulo from "../components/Titulo";
+import Destaques from "../components/Destaques";
 
 const Container = styled.main`
-  background-color: lightgray;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
 `;
 
 function Home() {
   return (
     <Container>
-      <h1>Página Home</h1>
+      <Titulo>Lançamentos</Titulo>
+      <LivrosDestaque />
+      <Titulo>Destaques</Titulo>
+      <Destaques />
     </Container>
   );
 };

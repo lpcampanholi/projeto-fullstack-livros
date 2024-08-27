@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Botao from "../components/Botao";
-import ListaLivros from "../components/ListaLivros";
+import ListaLivros from "../components/ListaLivros/ListaLivros";
 import FichaLivro from "../components/FichaLivro";
-// import { getLivros } from "../services/livros";
 import { useState } from "react";
 
 const Container = styled.main`
@@ -24,10 +23,6 @@ function Livros() {
   function fecharFicha() {
     setFichaAberta(false);
   };
-
-  // async function carregarLivros() {
-  //   const livrosApi = await getLivros();
-  // };
 
   return (
     <Container>
